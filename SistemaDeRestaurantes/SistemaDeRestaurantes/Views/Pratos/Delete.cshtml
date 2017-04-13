@@ -1,0 +1,47 @@
+﻿@model SistemaDeRestaurantes.Models.Prato
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir Prato</h2>
+
+<h3>Tem certeza que deseja excluir este registro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurante.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurante.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sim" class="btn btn-default" /> |
+            @Html.ActionLink("Não", "Index")
+        </div>
+    }
+</div>
